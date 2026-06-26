@@ -12,7 +12,7 @@
   /* Borders */
   --border: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(255, 255, 255, 0.16);
-  --border-accent: rgba(96, 165, 250, 0.25);
+  --border-accent: rgba(16, 185, 129, 0.25);
 
   /* Text */
   --text-primary: #EDEDEA;
@@ -20,9 +20,9 @@
   --text-muted: #666666;
 
   /* Accent — cool blue */
-  --accent: #60A5FA;
-  --accent-hover: #93C5FD;
-  --accent-subtle: rgba(96, 165, 250, 0.08);
+  --accent: #10B981;
+  --accent-hover: #34D399;
+  --accent-subtle: rgba(16, 185, 129, 0.08);
 
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -95,15 +95,7 @@ body::before {
   pointer-events: none;
 }
 
-#bg-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
+
 
 @keyframes bg-drift {
   0% { transform: translate(0, 0) rotate(0deg); }
@@ -188,7 +180,7 @@ h3, .h3 {
 }
 
 .mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
 }
 
 
@@ -404,7 +396,7 @@ section {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: var(--space-md);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
 }
 
 .hero__name {
@@ -433,36 +425,43 @@ section {
 }
 
 /* Photo placeholder */
-.hero__photo {
-  width: 260px;
-  height: 320px;
+
+.hero__photo-terminal {
   background: var(--bg-surface);
-  border: 2px dashed var(--border-hover);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
+  padding: var(--space-md);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  color: var(--text-primary);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+.terminal-header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
+  gap: 8px;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border);
 }
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #EF4444; }
+.dot.yellow { background: #F59E0B; }
+.dot.green { background: #10B981; }
+.terminal-body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+.terminal-body p { margin: 0 0 8px 0; }
+.terminal-body .prompt { color: var(--accent); font-weight: bold; }
+.terminal-body .output { color: var(--text-secondary); margin-bottom: 16px; }
+.terminal-body .cursor { display: inline-block; animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
 
-.hero__photo-initials {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: -0.02em;
-  opacity: 0.4;
-}
-
-.hero__photo-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-}
 
 /* If a real photo is added */
 .hero__photo img {
@@ -501,7 +500,7 @@ section {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
   margin-bottom: var(--space-sm);
 }
 
@@ -556,7 +555,7 @@ section {
   text-transform: uppercase;
   color: var(--text-muted);
   margin-bottom: var(--space-md);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
 }
 
 .skill-group__tags {
@@ -573,7 +572,7 @@ section {
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-sm);
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
   transition: all 0.2s ease;
 }
 
@@ -682,7 +681,7 @@ section {
   padding: 3px 10px;
   border-radius: var(--radius-sm);
   color: var(--text-muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
   letter-spacing: 0.02em;
   border: 1px solid var(--border);
 }
@@ -732,7 +731,7 @@ section {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
   margin-bottom: var(--space-xs);
 }
 
@@ -907,7 +906,7 @@ section {
   gap: 6px;
   font-size: 0.75rem;
   color: var(--accent);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans); text-transform: uppercase; letter-spacing: 0.1em;
   font-weight: 500;
 }
 

@@ -30,9 +30,6 @@
 
 <body>
 
-  <!-- ============ INTERACTIVE BACKGROUND GRID ============ -->
-  <canvas id="bg-canvas"></canvas>
-
   <!-- ============ NAVIGATION ============ -->
   <nav class="nav" id="nav">
     <div class="container nav__inner">
@@ -88,9 +85,19 @@
         </div>
 
         <!-- Photo placeholder — replace the inside of this div with an <img> tag when ready -->
-        <div class="hero__photo" id="photo-placeholder">
-          <span class="hero__photo-initials">KS</span>
-          <span class="hero__photo-label">Photo coming soon</span>
+        <div class="hero__photo-terminal" id="photo-placeholder">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">~</span> whoami</p>
+            <p class="output">kaustubh</p>
+            <p><span class="prompt">~</span> ./status</p>
+            <p class="output">Building tools that matter.</p>
+            <span class="cursor">_</span>
+          </div>
         </div>
       </div>
     </div>
@@ -142,7 +149,6 @@
               <span class="tag">MySQL</span>
               <span class="tag">VS Code</span>
               <span class="tag">IntelliJ</span>
-              <span class="tag">Antigravity</span>
               <span class="tag">Node.js</span>
               <span class="tag">Linux</span>
               <span class="tag">GitHub</span>
@@ -357,8 +363,7 @@
       </div>
 
       <p class="contact__text reveal">
-        I'm always open to discussing new projects, interesting ideas, or opportunities to collaborate. Whether you have
-        a question or just want to say hi — my inbox is open.
+        I'm always looking for new challenges and opportunities to build interesting software. If you want to talk about systems programming, data engineering, or just connect — send me a message.
       </p>
 
       <div class="contact__actions reveal">
